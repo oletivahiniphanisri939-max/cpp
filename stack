@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Stack {
+private:
+    vector<int> arr;
+
+public:
+    bool isEmpty() const {
+        return arr.empty();
+    }
+
+    void push(int x) {
+        arr.push_back(x);
+    }
+
+    int pop() {
+        if (isEmpty()) {
+            cout << "Stack Underflow\n";
+            return -1;
+        }
+        int val = arr.back();
+        arr.pop_back();
+        return val;
+    }
+
+    int peek() const {
+        if (isEmpty()) {
+            cout << "Stack is empty\n";
+            return -1;
+        }
+        return arr.back();
+    }
+
+    int size() const {
+        return arr.size();
+    }
+};
+int main() {
+    Stack s;
+    s.push(10);
+    s.push(20);
+    cout << "Top: " << s.peek() << endl; 
+    cout << "Popped: " << s.pop() << endl; 
+    cout << "Top after pop: " << s.peek() << endl; 
+    return 0;
+}
+
