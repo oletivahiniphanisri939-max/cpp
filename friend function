@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Bankaccount{
+	private :
+		double salary;
+		
+		public:
+			Bankaccount(double b): salary(b) {}
+			
+			friend void auditaccount(Bankaccount A);
+};
+
+
+void auditaccount(Bankaccount A)
+{
+	cout<<"tha value is:"  <<A.salary << endl;
+}
+int main()
+{
+ Bankaccount objBankaccount(700);
+	auditaccount(objBankaccount);
+
+	return 0;
+}
